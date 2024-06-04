@@ -1,14 +1,14 @@
 package io.apisense.scriptengine;
 
-import com.sun.script.javascript.RhinoScriptEngineFactory;
+import com.script.rhino.RhinoScriptEngineFactory;
 
 import org.hamcrest.MatcherAssert;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import com.script.ScriptEngine;
+import com.script.ScriptEngineManager;
+import com.script.ScriptException;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;

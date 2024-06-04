@@ -23,7 +23,7 @@
  * questions.
  */
 
-package com.sun.script.util;
+package com.script.util;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -32,8 +32,8 @@ import java.security.AccessControlContext;
 import java.security.AccessController;
 import java.security.PrivilegedExceptionAction;
 
-import javax.script.Invocable;
-import javax.script.ScriptException;
+import com.script.Invocable;
+import com.script.ScriptException;
 
 /*
  * java.lang.reflect.Proxy based interface implementor. This is meant

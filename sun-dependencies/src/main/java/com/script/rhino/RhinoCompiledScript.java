@@ -23,7 +23,7 @@
  * questions.
  */
 
-package com.sun.script.javascript;
+package com.script.rhino;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.JavaScriptException;
@@ -31,10 +31,10 @@ import org.mozilla.javascript.RhinoException;
 import org.mozilla.javascript.Script;
 import org.mozilla.javascript.Scriptable;
 
-import javax.script.CompiledScript;
-import javax.script.ScriptContext;
-import javax.script.ScriptEngine;
-import javax.script.ScriptException;
+import com.script.CompiledScript;
+import com.script.ScriptContext;
+import com.script.ScriptEngine;
+import com.script.ScriptException;
 
 /**
  * Represents compiled JavaScript code.

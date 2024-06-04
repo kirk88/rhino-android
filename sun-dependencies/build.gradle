@@ -8,8 +8,6 @@ java {
 dependencies {
     testImplementation 'junit:junit:4.13.2'
 
-    // JSR 223 (javax.script package)
-    api 'com.sun.phobos:jsr223-api:1.0'
     // Rhino engine implementation by Mozilla
     api 'org.mozilla:rhino:1.7.15'
 }

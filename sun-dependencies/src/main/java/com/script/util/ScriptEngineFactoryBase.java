@@ -23,10 +23,10 @@
  * questions.
  */
 
-package com.sun.script.util;
+package com.script.util;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
+import com.script.ScriptEngine;
+import com.script.ScriptEngineFactory;
 
 /*
  * Abstract super class for factory implementations.

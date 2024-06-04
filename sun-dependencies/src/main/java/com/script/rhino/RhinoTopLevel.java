@@ -23,7 +23,7 @@
  * questions.
  */
 
-package com.sun.script.javascript;
+package com.script.rhino;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Function;
@@ -36,9 +36,9 @@ import org.mozilla.javascript.Wrapper;
 
 import java.security.AccessControlContext;
 
-import javax.script.Bindings;
-import javax.script.ScriptContext;
-import javax.script.SimpleScriptContext;
+import com.script.Bindings;
+import com.script.ScriptContext;
+import com.script.SimpleScriptContext;
 
 /**
  * This class serves as top level scope for Rhino. This class adds
@@ -58,7 +58,7 @@ public final class RhinoTopLevel extends ImporterTopLevel {
 
         // initialize JSAdapter lazily. Reduces footprint & startup time.
         new LazilyLoadedCtor(this, "JSAdapter",
-                "com.sun.script.javascript.JSAdapter",
+                "com.sun.script.rhino.JSAdapter",
                 false);
 
         /*

@@ -23,7 +23,7 @@
  * questions.
  */
 
-package com.sun.script.util;
+package com.script.util;
 
 /**
  * A convenience class for retrieving the string value of a system
@@ -42,7 +42,6 @@ package com.sun.script.util;
  *
  * @author Roland Schemers
  * @see java.security.PrivilegedAction
- * @see java.security.AccessController
  * @since 1.2
  */
 

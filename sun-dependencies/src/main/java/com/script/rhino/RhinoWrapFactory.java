@@ -23,7 +23,7 @@
  * questions.
  */
 
-package com.sun.script.javascript;
+package com.script.rhino;
 
 import org.mozilla.javascript.ClassShutter;
 import org.mozilla.javascript.Context;

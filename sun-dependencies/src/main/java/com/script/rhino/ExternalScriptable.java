@@ -23,7 +23,7 @@
  * questions.
  */
 
-package com.sun.script.javascript;
+package com.script.rhino;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Function;
@@ -37,8 +37,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.script.Bindings;
-import javax.script.ScriptContext;
+import com.script.Bindings;
+import com.script.ScriptContext;
 
 /**
  * ExternalScriptable is an implementation of Scriptable

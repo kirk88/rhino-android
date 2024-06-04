@@ -23,10 +23,10 @@
  * questions.
  */
 
-package com.sun.script.javascript;
+package com.script.rhino;
 
-import com.sun.script.util.GetPropertyAction;
-import com.sun.script.util.InterfaceImplementor;
+import com.script.util.GetPropertyAction;
+import com.script.util.InterfaceImplementor;
 
 import org.mozilla.javascript.Callable;
 import org.mozilla.javascript.Context;
@@ -52,16 +52,16 @@ import java.security.PrivilegedAction;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.script.AbstractScriptEngine;
-import javax.script.Bindings;
-import javax.script.Compilable;
-import javax.script.CompiledScript;
-import javax.script.Invocable;
-import javax.script.ScriptContext;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
-import javax.script.ScriptException;
-import javax.script.SimpleBindings;
+import com.script.AbstractScriptEngine;
+import com.script.Bindings;
+import com.script.Compilable;
+import com.script.CompiledScript;
+import com.script.Invocable;
+import com.script.ScriptContext;
+import com.script.ScriptEngine;
+import com.script.ScriptEngineFactory;
+import com.script.ScriptException;
+import com.script.SimpleBindings;
 
 
 /**

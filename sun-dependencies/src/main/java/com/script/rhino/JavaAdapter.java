@@ -23,7 +23,7 @@
  * questions.
  */
 
-package com.sun.script.javascript;
+package com.script.rhino;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Function;
@@ -32,7 +32,7 @@ import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
 import org.mozilla.javascript.Wrapper;
 
-import javax.script.Invocable;
+import com.script.Invocable;
 
 /**
  * This class implements Rhino-like JavaAdapter to help implement a Java
@@ -70,7 +70,7 @@ final class JavaAdapter extends ScriptableObject implements Function {
          * name is already defined in Context.initStandardObjects. We
          * simply overwrite the property value!
          */
-        ScriptableObject.putProperty(topLevel, "JavaAdapter", obj);
+        putProperty(topLevel, "JavaAdapter", obj);
     }
 
     public String getClassName() {
