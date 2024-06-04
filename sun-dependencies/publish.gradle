@@ -53,8 +53,8 @@ publishing {
     repositories {
         maven {
             // change URLs to point to your repos, e.g. http://my.org/repo
-            def releasesRepoUrl = "${layout.buildDirectory}/repos/releases"
-            def snapshotsRepoUrl = "${layout.buildDirectory}/repos/snapshots"
+            def releasesRepoUrl = "${layout.buildDirectory.get()}/repos/releases"
+            def snapshotsRepoUrl = "${layout.buildDirectory.get()}/repos/snapshots"
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
         }
     }
