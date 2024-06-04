@@ -34,8 +34,6 @@ import org.mozilla.javascript.WrapFactory;
 import java.lang.reflect.Member;
 import java.lang.reflect.Modifier;
 
-import static sun.security.util.SecurityConstants.GET_CLASSLOADER_PERMISSION;
-
 /**
  * This wrap factory is used for security reasons. JSR 223 script
  * engine interface and JavaScript engine classes are run as bootstrap
@@ -50,6 +48,9 @@ import static sun.security.util.SecurityConstants.GET_CLASSLOADER_PERMISSION;
  * @since 1.6
  */
 final class RhinoWrapFactory extends WrapFactory {
+    public static final RuntimePermission GET_CLASSLOADER_PERMISSION =
+            new RuntimePermission("getClassLoader");
+
     private RhinoWrapFactory() {}
     private static RhinoWrapFactory theInstance;
 

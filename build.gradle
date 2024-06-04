@@ -1,29 +1,17 @@
 buildscript {
     repositories {
+        google()
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:8.3.2'
     }
 }
-
-apply from: 'nexusConfig.gradle'
-
-ext.commonLicense = {
-    name 'The GNU General Public License (GPL)'
-    url 'https://www.gnu.org/licenses/gpl-2.0.txt'
-}
-
-ext.devs = [
-        {
-            id 'aveuiller'
-            name 'Antoine Veuiller'
-            email 'aveuiller@gmail.com'
-        }
-]
 
 allprojects {
     repositories {
+        google()
         mavenCentral()
     }
 

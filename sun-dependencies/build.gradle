@@ -1,52 +1,17 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 
-sourceCompatibility = JavaVersion.VERSION_1_7
-targetCompatibility = JavaVersion.VERSION_1_7
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 
     // JSR 223 (javax.script package)
-    compile 'com.sun.phobos:jsr223-api:1.0'
+    api 'com.sun.phobos:jsr223-api:1.0'
     // Rhino engine implementation by Mozilla
-    compile 'org.mozilla:rhino:1.7.14'
+    api 'org.mozilla:rhino:1.7.15'
 }
 
-task javadocJar(type: Jar) {
-    classifier = 'javadoc'
-    from javadoc
-}
-
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-artifacts {
-    archives javadocJar, sourcesJar
-}
-
-uploadArchives {
-    repositories.mavenDeployer {
-        pom.project {
-            name 'Rhino for Android'
-            artifactId 'rhino-android'
-            packaging 'jar'
-            description 'Give access to RhinoScriptEngine from the JSR223 interfaces on Android JRE.'
-            url 'https://apisense.io'
-
-            scm {
-                connection 'scm:git:https://github.com/APISENSE/rhino-android.git'
-                developerConnection 'scm:git:https://github.com/APISENSE/rhino-android'
-                url 'https://github.com/APISENSE/rhino-android'
-            }
-
-            licenses {
-                license commonLicense
-            }
-            developers {
-                devs.collect({ developer it })
-            }
-        }
-    }
-}
+apply from: 'publish.gradle'

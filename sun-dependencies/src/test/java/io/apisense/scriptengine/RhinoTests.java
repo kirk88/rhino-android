@@ -2,6 +2,7 @@ package io.apisense.scriptengine;
 
 import com.sun.script.javascript.RhinoScriptEngineFactory;
 
+import org.hamcrest.MatcherAssert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -47,17 +48,17 @@ public class RhinoTests {
     }
 
     private void testEngine(ScriptEngine rhino) throws ScriptException {
-        assertThat("Injected engine is not null", rhino, notNullValue());
-        assertThat("We use rhino",
+        MatcherAssert.assertThat("Injected engine is not null", rhino, notNullValue());
+        MatcherAssert.assertThat("We use rhino",
                 rhino.getFactory().getEngineName().toLowerCase().contains("rhino"), is(true));
-        assertThat("Injected engine is usable", (Double) rhino.eval("2.5+2"), is(4.5));
+        MatcherAssert.assertThat("Injected engine is usable", (Double) rhino.eval("2.5+2"), is(4.5));
     }
 
     @Test
     public void testMathMethods() throws ScriptException {
         ScriptEngine rhino = scriptEngineManager.getEngineByName("rhino");
         testEngine(rhino);
-        assertThat("We can access Math.asinh", (Double) rhino.eval("Math.asinh(0);"), is(0.0));
+        MatcherAssert.assertThat("We can access Math.asinh", (Double) rhino.eval("Math.asinh(0);"), is(0.0));
     }
 
 }

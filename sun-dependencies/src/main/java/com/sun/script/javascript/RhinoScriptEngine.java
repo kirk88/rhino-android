@@ -25,6 +25,7 @@
 
 package com.sun.script.javascript;
 
+import com.sun.script.util.GetPropertyAction;
 import com.sun.script.util.InterfaceImplementor;
 
 import org.mozilla.javascript.Callable;
@@ -152,7 +153,7 @@ public final class RhinoScriptEngine extends AbstractScriptEngine
     private static int getLanguageVersion() {
         int version;
         String tmp = java.security.AccessController.doPrivileged(
-            new sun.security.action.GetPropertyAction(RHINO_JS_VERSION));
+            new GetPropertyAction(RHINO_JS_VERSION));
         if (tmp != null) {
             version = Integer.parseInt((String)tmp);
         } else {

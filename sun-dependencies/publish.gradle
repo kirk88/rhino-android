@@ -1,0 +1,67 @@
+tasks.register('sourcesJar', Jar) {
+    from sourceSets.main.allJava
+    archiveClassifier = 'sources'
+}
+
+tasks.register('javadocJar', Jar) {
+    from javadoc
+    archiveClassifier = 'javadoc'
+}
+
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'rhino-android'
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'Rhino for Android'
+                description = 'Give access to RhinoScriptEngine from the JSR223 interfaces on Android JRE.'
+                url = 'https://apisense.io'
+                developers {
+                    developer {
+                        id = 'kirk88'
+                        name = 'LiZhanPing'
+                        email = '481314821@qq.com'
+                    }
+                }
+                licenses {
+                    license {
+                        name = 'The GNU General Public License (GPL)'
+                        url = 'https://www.gnu.org/licenses/gpl-2.0.txt'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:https://github.com/kirk88/rhino-android.git'
+                    developerConnection = 'scm:git:https://github.com/kirk88/rhino-android'
+                    url = 'https://github.com/kirk88/rhino-android'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            // change URLs to point to your repos, e.g. http://my.org/repo
+            def releasesRepoUrl = "${layout.buildDirectory}/repos/releases"
+            def snapshotsRepoUrl = "${layout.buildDirectory}/repos/snapshots"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        }
+    }
+}
+
+javadoc {
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
